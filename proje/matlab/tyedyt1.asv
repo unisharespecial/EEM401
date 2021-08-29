@@ -1,0 +1,9 @@
+I=imread('C:\Documents and Settings\Administrator\Desktop\DSP proje\31.jpg');
+figure,imshow(I)
+J=imnoise(I,'gaussian',0.065);
+figure,imshow(J)
+MI=rgb2gray(J);
+figure,imshow(MI)
+mask1=1/9*[1 1 1,1 1 1,1 1 1];
+NI=uint8(conv2(double(MI),mask1));
+figure,imshow(NI);
